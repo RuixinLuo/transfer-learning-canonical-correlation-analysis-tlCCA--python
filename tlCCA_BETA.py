@@ -44,16 +44,16 @@ def beta_tlCCA_CrossFre(idx_num, n_train, t_task,A_ind,B_ind):
     idx_num = idx_num
     idx_subject = subject_id[idx_num]
     sfreq = 250
-    filepath = r'D:\【研究生】公开数据集\Beta'
+    filepath = r'Beta'
     filepath = os.path.join(filepath, str(idx_subject) + '.mat')
     num_filter = 5
-    preEEG = PreProcessing_BETA(filepath, t_begin=0.5, t_end=0.5 + 0.13 + t_task,  # t_begin=0.5+0.14, t_end=0.5+0.14+0.3
+    preEEG = PreProcessing_BETA(filepath, t_begin=0.5, t_end=0.5 + 0.13 + t_task,  
                            fs_down=250, chans=['POZ', 'PZ', 'PO3', 'PO5', 'PO4', 'PO6', 'O1', 'OZ', 'O2'],
                            num_filter=num_filter)
 
     raw_data = preEEG.load_data()
-    w_pass_2d = np.array([[5, 14, 22, 30, 38, 46, 54, 62], [90, 90, 90, 90, 90, 90, 90, 90]])  # 70
-    w_stop_2d = np.array([[3, 12, 20, 28, 36, 44, 52, 60], [92, 92, 92, 92, 92, 92, 92, 92]])  # 72
+    w_pass_2d = np.array([[5, 14, 22, 30, 38, 46, 54, 62], [90, 90, 90, 90, 90, 90, 90, 90]])  
+    w_stop_2d = np.array([[3, 12, 20, 28, 36, 44, 52, 60], [92, 92, 92, 92, 92, 92, 92, 92]])  
     filtered_data = preEEG.filtered_data_iir111(w_pass_2d, w_stop_2d, raw_data)
 
     filtered_data['bank1'] = filtered_data['bank1'][:, : ,target_order,:]  # Sorted by frequency in ascending order
@@ -143,7 +143,7 @@ if __name__ == '__main__':
     acc_all = np.zeros((70,4))
     for i_train in range(4):
         print('train_size=',i_train+1)
-        acc = Parallel(n_jobs=1)(delayed(beta_tlCCA_CrossFre)(idx_num, n_train=i_train+1, t_task=0.5, A_ind=A,B_ind=B) for idx_num in range(70))
+        acc = Parallel(n_jobs=1)(delayed(beta_tlCCA_CrossFre)(idx_num, n_train=i_train+1, t_task=1, A_ind=A,B_ind=B) for idx_num in range(70))
         acc =  np.array(acc)
         acc_all[:,i_train] = acc
         print('mean_acc=',np.mean(acc,-1))

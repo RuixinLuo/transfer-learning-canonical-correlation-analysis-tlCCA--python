@@ -49,7 +49,7 @@ if __name__ == '__main__':
         filepath = os.path.join(filepath, str(id) + '.mat')
         num_filter = 1
         t_task = 2
-        preEEG = PreProcessing(filepath, t_begin=0.5 + 0.14, t_end=0.5 + 0.14 + t_task,  # t_begin=0.5+0.14, t_end=0.5+0.14+2
+        preEEG = PreProcessing(filepath, t_begin=0.5 + 0.14, t_end=0.5 + 0.14 + t_task,  
                                fs_down=250, chans=['POZ', 'PZ', 'PO3', 'PO5', 'PO4', 'PO6', 'O1', 'OZ', 'O2'],
                                num_filter=num_filter)
 
