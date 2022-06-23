@@ -19,10 +19,6 @@ import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
 
-    #  setting
-    taskTime = 2
-    fs = 250
-
     ycor_all = []
     ymse_all = []
     # setting
@@ -45,6 +41,7 @@ if __name__ == '__main__':
     for id in subject_id:
         # load data
         sfreq = 250
+        fs = sfreq
         filepath = r'Bench'
         filepath = os.path.join(filepath, str(id) + '.mat')
         num_filter = 1
