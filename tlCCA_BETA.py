@@ -106,7 +106,7 @@ def beta_tlCCA_CrossFre(idx_num, n_train, t_task,A_ind,B_ind):
             #
             train_U['bank' + str(idx_filter)] = U  # n_channels, n_events/2
             train_V['bank' + str(idx_filter)] = V  # 2 * n_harmonics, n_events/2
-            train_W['bank' + str(idx_filter)] = np.array(w_all).T # 2 * n_channels, n_events/2
+            train_W['bank' + str(idx_filter)] = np.array(w_all).T # n_channels, n_events/2
             train_Hr['bank' + str(idx_filter)] = Hr # n_times, n_events/2
 
         # test: SUBSET B
