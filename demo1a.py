@@ -3,7 +3,7 @@
 Author:
     RuixinLuo  ruixin_luo@tju.edu.cn
 Application:
-    BETA SSVEP dataset with 40 commands.
+    Benchmark SSVEP dataset with 40 commands.
     we decompose an SSVEP and then reconstruct it (corresponding to the same stimulus).
     source code: https://github.com/edwin465/SSVEP-Impulse-Response/blob/main/demo1a_ssvep_decomposition_reconstruction.m
 '''
