@@ -99,7 +99,7 @@ if __name__ == '__main__':
         sub_id = sub_id+1
     ycor_all = np.array(ycor_all)
     ymse_all = np.array(ymse_all)
-    # the result (ycor_all, ymse_all) is same as the source code (demo1a) with the same pre-processed data (data_pre)
+    # the result (ycor_all, ymse_all) is same as that in the source code (demo1a), when the input preprocessed data is the same(data_pre).
 
 
 

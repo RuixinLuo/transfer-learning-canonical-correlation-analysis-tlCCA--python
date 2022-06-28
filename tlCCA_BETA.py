@@ -151,7 +151,6 @@ if __name__ == '__main__':
     # if everything is ok, You will get the following output:
     # when t_task=0.5s ,train_size=4 , the mean_acc is 0.6554 
     # when t_task=1s ,train_size=4 , the mean_acc is 0.8550
-    # Note that this result is almost the same as that of Fig.7 in the paper
 
 
 
